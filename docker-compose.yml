@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  webserver:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/
+      - ./cert/:/etc/nginx/certs/
+      - ./html/:/var/www/html/
